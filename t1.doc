@@ -1,0 +1,359 @@
+student@MIT-ICT-LAB9-01:~$ pwd
+/home/student
+student@MIT-ICT-LAB9-01:~$ mkdir 220953428
+student@MIT-ICT-LAB9-01:~$ cd 220953428
+student@MIT-ICT-LAB9-01:~/220953428$ ls
+student@MIT-ICT-LAB9-01:~/220953428$ mkdir lab1
+student@MIT-ICT-LAB9-01:~/220953428$ ls
+lab1
+student@MIT-ICT-LAB9-01:~/220953428$ touch file1.txt file2.txh
+student@MIT-ICT-LAB9-01:~/220953428$ ls
+file1.txt  file2.txh  lab1
+student@MIT-ICT-LAB9-01:~/220953428$ ls -l
+total 0
+-rw-rw-r-- 1 student student 0 Jan  8 09:30 file1.txt
+-rw-rw-r-- 1 student student 0 Jan  8 09:30 file2.txh
+student@MIT-ICT-LAB9-01:~/220953428$ cat file1,txt
+cat: file1,txt: No such file or directory
+student@MIT-ICT-LAB9-01:~/220953428$ cat file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ cat >>file1.txt
+This is the first OS lab program.
+Hello
+student@MIT-ICT-LAB9-01:~/220953428$ cat file1.txt
+This is the first OS lab program.
+Hello
+student@MIT-ICT-LAB9-01:~/220953428$ ls -l
+total 4
+-rw-rw-r-- 1 student student 40 Jan  8 09:35 file1.txt
+-rw-rw-r-- 1 student student  0 Jan  8 09:30 file2.txh
+student@MIT-ICT-LAB9-01:~/220953428$ cp file1.txt file2.txh
+student@MIT-ICT-LAB9-01:~/220953428$ cat file2.txh
+This is the first OS lab program.
+Hello
+student@MIT-ICT-LAB9-01:~/220953428$ mv file2.txh file2.txt
+student@MIT-ICT-LAB9-01:~/220953428$ cat file2.txh
+cat: file2.txh: No such file or directory
+student@MIT-ICT-LAB9-01:~/220953428$ cat file2.txt
+This is the first OS lab program.
+Hello
+student@MIT-ICT-LAB9-01:~/220953428$ ls -l
+total 8
+-rw-rw-r-- 1 student student 40 Jan  8 09:35 file1.txt
+-rw-rw-r-- 1 student student 40 Jan  8 09:39 file2.txt
+student@MIT-ICT-LAB9-01:~/220953428$ rm file2.txt
+student@MIT-ICT-LAB9-01:~/220953428$ ls -l
+total 4
+-rw-rw-r-- 1 student student 40 Jan  8 09:35 file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ x-special/nautilus-clipboard
+bash: x-special/nautilus-clipboard: No such file or directory
+student@MIT-ICT-LAB9-01:~/220953428$ copy
+
+Command 'copy' not found, did you mean:
+
+  command 'cozy' from snap cozy (1.2.1)
+  command 'opy' from snap opy (latest)
+  command 'copay' from snap copay (12.5.6)
+  command 'rcopy' from deb rdmacm-utils (28.0-1ubuntu1)
+  command 'copyq' from deb copyq (3.10.0-1)
+  command 'bcopy' from deb bacula-sd (9.4.2-2ubuntu5)
+  command 'mcopy' from deb mtools (4.0.24-1)
+  command 'ropy' from deb libdisorder-tools (0.0.2+git20130809.8062ee1-1)
+  command 'hcopy' from deb hfsutils (3.2.6-14)
+  command 'fcopy' from deb fai-client (5.3.6ubuntu1)
+
+See 'snap info <snapname>' for additional versions.
+
+student@MIT-ICT-LAB9-01:~/220953428$ file:///media/student/A64D-969F/Os%20Lab%20Manual.pdf
+bash: file:///media/student/A64D-969F/Os%20Lab%20Manual.pdf: No such file or directory
+student@MIT-ICT-LAB9-01:~/220953428$ whoami
+student
+student@MIT-ICT-LAB9-01:~/220953428$ date
+Monday 08 January 2024 09:44:37 AM IST
+student@MIT-ICT-LAB9-01:~/220953428$ ls -l|cat file1.txt
+This is the first OS lab program.
+Hello
+student@MIT-ICT-LAB9-01:~/220953428$ cat file1.txt
+This is the first OS lab program.
+Hello
+student@MIT-ICT-LAB9-01:~/220953428$ ls -l | cat >>file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ cat file1.txt
+This is the first OS lab program.
+Hello
+total 4
+-rw-rw-r-- 1 student student 40 Jan  8 09:35 file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ cat >>file1.txt
+second line^Z
+[1]+  Stopped                 cat >> file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ cat file1.txt
+This is the first OS lab program.
+Hello
+total 4
+-rw-rw-r-- 1 student student 40 Jan  8 09:35 file1.txt
+second linestudent@MIT-ICT-LAB9-01:~/220953428$ ls -l
+total 4
+-rw-rw-r-- 1 student student 114 Jan  8 09:48 file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ wc -l file1.txt
+4 file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ wc -c file1.txt
+114 file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ wc -w file1.txt
+21 file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ man lse
+No manual entry for lse
+student@MIT-ICT-LAB9-01:~/220953428$ man ls
+student@MIT-ICT-LAB9-01:~/220953428$ ls *.txt
+file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ touch t1.doc t2.doc
+student@MIT-ICT-LAB9-01:~/220953428$ ls *.txt
+file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ ls *.doc
+t1.doc  t2.doc
+student@MIT-ICT-LAB9-01:~/220953428$ rm t2.doc
+student@MIT-ICT-LAB9-01:~/220953428$ ls -l
+total 4
+-rw-rw-r-- 1 student student 114 Jan  8 09:48 file1.txt
+-rw-rw-r-- 1 student student   0 Jan  8 09:52 t1.doc
+student@MIT-ICT-LAB9-01:~/220953428$ ls | more
+file1.txt
+t1.doc
+student@MIT-ICT-LAB9-01:~/220953428$ ls>file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ cat file1.txt
+file1.txt
+t1.doc
+student@MIT-ICT-LAB9-01:~/220953428$ echo "Mary 555-1234" >> file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ cat file1.txt
+file1.txt
+t1.doc
+Mary 555-1234
+student@MIT-ICT-LAB9-01:~/220953428$ cd ..
+student@MIT-ICT-LAB9-01:~$ ls -l
+total 1012
+drwxrwxr-x 2 student student   4096 Jan  8 09:53  220953428
+drwx------ 3 student student   4096 Aug 22 13:19  Desktop
+drwx------ 3 student student   4096 Aug 22 12:58  Documents
+drwx------ 2 student student   4096 Jan  2 09:11  Downloads
+drwx------ 2 student student   4096 Jun 28  2023  Music
+-rw-r--r-- 1 student student 992467 Jan  8 09:18 'Os Lab Manual.pdf'
+drwx------ 2 student student   4096 Jun 28  2023  Pictures
+drwxrwxr-x 6 student student   4096 Jan  2 11:37  pt
+drwx------ 2 student student   4096 Jun 28  2023  Public
+drwx------ 2 student student   4096 Jun 28  2023  Templates
+drwx------ 2 student student   4096 Jun 28  2023  Videos
+student@MIT-ICT-LAB9-01:~$ cd 220953428
+student@MIT-ICT-LAB9-01:~/220953428$ ls -l
+total 4
+-rw-rw-r-- 1 student student 31 Jan  8 09:59 file1.txt
+-rw-rw-r-- 1 student student  0 Jan  8 09:52 t1.doc
+student@MIT-ICT-LAB9-01:~/220953428$ locate mozilla
+
+Command 'locate' not found, but can be installed with:
+
+apt install mlocate
+Please ask your administrator.
+
+student@MIT-ICT-LAB9-01:~/220953428$ find file1.txt
+file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ whereis file1.txt
+file1:
+student@MIT-ICT-LAB9-01:~/220953428$ cp (-n,-i,-f)
+bash: syntax error near unexpected token `-n,-i,-f'
+student@MIT-ICT-LAB9-01:~/220953428$ ls -l
+total 4
+-rw-rw-r-- 1 student student 31 Jan  8 09:59 file1.txt
+-rw-rw-r-- 1 student student  0 Jan  8 09:52 t1.doc
+student@MIT-ICT-LAB9-01:~/220953428$ !!
+ls -l
+total 4
+-rw-rw-r-- 1 student student 31 Jan  8 09:59 file1.txt
+-rw-rw-r-- 1 student student  0 Jan  8 09:52 t1.doc
+student@MIT-ICT-LAB9-01:~/220953428$ ls [0-9]x
+ls: cannot access '[0-9]x': No such file or directory
+student@MIT-ICT-LAB9-01:~/220953428$ ls [0-9]
+ls: cannot access '[0-9]': No such file or directory
+student@MIT-ICT-LAB9-01:~/220953428$ ls ?[0-9]
+ls: cannot access '?[0-9]': No such file or directory
+student@MIT-ICT-LAB9-01:~/220953428$ [0-9]
+[0-9]: command not found
+student@MIT-ICT-LAB9-01:~/220953428$ head file1.txt
+file1.txt
+t1.doc
+Mary 555-1234
+student@MIT-ICT-LAB9-01:~/220953428$ tail file1.txt
+file1.txt
+t1.doc
+Mary 555-1234
+student@MIT-ICT-LAB9-01:~/220953428$ cat >file1.txt
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+ninth
+tenth
+^C
+student@MIT-ICT-LAB9-01:~/220953428$ cat file1.txt
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+ninth
+tenth
+student@MIT-ICT-LAB9-01:~/220953428$ head file1.txt
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+ninth
+tenth
+student@MIT-ICT-LAB9-01:~/220953428$ man man
+student@MIT-ICT-LAB9-01:~/220953428$ man -k wildcard
+wildcard: nothing appropriate.
+student@MIT-ICT-LAB9-01:~/220953428$ man man
+student@MIT-ICT-LAB9-01:~/220953428$ man -k wild
+wild: nothing appropriate.
+student@MIT-ICT-LAB9-01:~/220953428$ man -K wildcard
+--Man-- next: git-tag(1) [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]
+^C
+student@MIT-ICT-LAB9-01:~/220953428$ ls ????
+ls: cannot access '????': No such file or directory
+student@MIT-ICT-LAB9-01:~/220953428$ ls *.txt
+file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ ls ?????.txt
+file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ ls ?????[6-9].txt
+ls: cannot access '?????[6-9].txt': No such file or directory
+student@MIT-ICT-LAB9-01:~/220953428$ ls ?????[0-9].txt
+ls: cannot access '?????[0-9].txt': No such file or directory
+student@MIT-ICT-LAB9-01:~/220953428$ ls [0-9].txt
+ls: cannot access '[0-9].txt': No such file or directory
+student@MIT-ICT-LAB9-01:~/220953428$ ls *[0-9].txt
+file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ ls [!aeiou]*.txt
+file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ ls [aeiou]*.txt
+ls: cannot access '[aeiou]*.txt': No such file or directory
+student@MIT-ICT-LAB9-01:~/220953428$ find file1.txt
+file1.txt
+student@MIT-ICT-LAB9-01:~/220953428$ pwd
+/home/student/220953428
+student@MIT-ICT-LAB9-01:~/220953428$ cd-
+
+Command 'cd-' not found, did you mean:
+
+  command 'cdo' from deb cdo (1.9.9~rc1-1)
+  command 'cde' from deb cde (0.1+git9-g551e54d-1.1build1)
+  command 'cdb' from deb tinycdb (0.78build1)
+  command 'cd5' from deb cd5 (0.1-4)
+  command 'cdp' from deb irpas (0.10-7)
+  command 'cdi' from deb cdo (1.9.9~rc1-1)
+  command 'cdw' from deb cdw (0.8.1-1build4)
+
+Try: apt install <deb name>
+
+student@MIT-ICT-LAB9-01:~/220953428$ cd -
+/home/student
+student@MIT-ICT-LAB9-01:~$ cd 220953428
+student@MIT-ICT-LAB9-01:~/220953428$ tr "[0-9]" "[D]" <file1.txt>
+bash: syntax error near unexpected token `newline'
+student@MIT-ICT-LAB9-01:~/220953428$ tr "[0-9]" "[D]" <file1.txt
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+ninth
+tenth
+student@MIT-ICT-LAB9-01:~/220953428$ cat <<file1.txt
+> he90n
+> jn527vx
+> ^C
+student@MIT-ICT-LAB9-01:~/220953428$ cat file1.txt
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+ninth
+tenth
+student@MIT-ICT-LAB9-01:~/220953428$ cat >>file1.txt
+4b6lk
+3678njm
+9842kln
+^C
+student@MIT-ICT-LAB9-01:~/220953428$ cat file1.txt
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+ninth
+tenth
+4b6lk
+3678njm
+9842kln
+student@MIT-ICT-LAB9-01:~/220953428$ tr "[0-9]" "[D]" <file1.txt
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+ninth
+tenth
+]b]lk
+]]]]njm
+]]]]kln
+student@MIT-ICT-LAB9-01:~/220953428$ cat >>file1.txt 
+785973
+^C
+student@MIT-ICT-LAB9-01:~/220953428$ tr "0-9" "D" <file1.txt
+second
+third
+fourth
+fifth
+sixth
+seventh
+eighth
+ninth
+tenth
+DbDlk
+DDDDnjm
+DDDDkln
+DDDDDD
+student@MIT-ICT-LAB9-01:~/220953428$ ps
+    PID TTY          TIME CMD
+   4758 pts/0    00:00:00 bash
+   4907 pts/0    00:00:00 cat
+   5662 pts/0    00:00:00 ps
+student@MIT-ICT-LAB9-01:~/220953428$ cat -n file1.txt
+     1	second
+     2	third
+     3	fourth
+     4	fifth
+     5	sixth
+     6	seventh
+     7	eighth
+     8	ninth
+     9	tenth
+    10	4b6lk
+    11	3678njm
+    12	9842kln
+    13	785973
+student@MIT-ICT-LAB9-01:~/220953428$ 
+
+
