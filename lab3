@@ -1,0 +1,448 @@
+    1  cd desktop
+    2  cd 4MT22CS407
+    3  root
+    4  ls
+    5  cal
+    6  cd 4MT22CS407
+    7  mkdir 4MT22CS407
+    8  $ ./eclipse
+    9  cd eclipse
+   10  echo $JAVA_HOME
+   11  /opt/jdk
+   12  echo $JAVA_HOME /opt/jdk
+   13  ls
+   14  ./eclipse
+   15  $ cd <eclipse install directory>
+   16  $ cd /home/opt/eclipse
+   17  eclipse
+   18  cd /opt/eclipse/eclipse
+   19  cd /opt
+   20  cd /eclipse
+   21  eclipse
+   22  cd /eclipse
+   23  packettracer
+   24  pwd
+   25  mkdir 220953428
+   26  cd 220953428
+   27  ls
+   28  mkdir lab1
+   29  ls
+   30  touch file1.txt file2.txh
+   31  ls
+   32  ls -l
+   33  cat file1,txt
+   34  cat file1.txt
+   35  cat >>file1.txt
+   36  cat file1.txt
+   37  ls -l
+   38  cp file1.txt file2.txh
+   39  cat file2.txh
+   40  mv file2.txh file2.txt
+   41  cat file2.txh
+   42  cat file2.txt
+   43  ls -l
+   44  rm file2.txt
+   45  ls -l
+   46  x-special/nautilus-clipboard
+   47  copy
+   48  file:///media/student/A64D-969F/Os%20Lab%20Manual.pdf
+   49  whoami
+   50  date
+   51  ls -l|cat file1.txt
+   52  cat file1.txt
+   53  ls -l | cat >>file1.txt
+   54  cat file1.txt
+   55  cat >>file1.txt
+   56  cat file1.txt
+   57  ls -l
+   58  wc -l file1.txt
+   59  wc -c file1.txt
+   60  wc -w file1.txt
+   61  man lse
+   62  man ls
+   63  ls *.txt
+   64  touch t1.doc t2.doc
+   65  ls *.txt
+   66  ls *.doc
+   67  rm t2.doc
+   68  ls -l
+   69  ls | more
+   70  ls>file1.txt
+   71  cat file1.txt
+   72  echo "Mary 555-1234" >> file1.txt
+   73  cat file1.txt
+   74  cd ..
+   75  ls -l
+   76  cd 220953428
+   77  ls -l
+   78  locate mozilla
+   79  find file1.txt
+   80  whereis file1.txt
+   81  cp (-n,-i,-f)
+   82  ls -l
+   83  ls [0-9]x
+   84  ls [0-9]
+   85  ls ?[0-9]
+   86  [0-9]
+   87  head file1.txt
+   88  tail file1.txt
+   89  cat >file1.txt
+   90  cat file1.txt
+   91  head file1.txt
+   92  man man
+   93  man -k wildcard
+   94  man man
+   95  man -k wild
+   96  man -K wildcard
+   97  ls ????
+   98  ls *.txt
+   99  ls ?????.txt
+  100  ls ?????[6-9].txt
+  101  ls ?????[0-9].txt
+  102  ls [0-9].txt
+  103  ls *[0-9].txt
+  104  ls [!aeiou]*.txt
+  105  ls [aeiou]*.txt
+  106  find file1.txt
+  107  pwd
+  108  cd-
+  109  cd -
+  110  cd 220953428
+  111  tr "[0-9]" "[D]" <file1.txt>
+  112  tr "[0-9]" "[D]" <file1.txt
+  113  cat <<file1.txt
+  114  he90n
+  115  jn527vx
+  116  cat file1.txt
+  117  cat >>file1.txt
+  118  cat file1.txt
+  119  tr "[0-9]" "[D]" <file1.txt
+  120  cat >>file1.txt 
+  121  tr "0-9" "D" <file1.txt
+  122  ps
+  123  cat -n file1.txt
+  124  pwd
+  125  ls
+  126  mkdir
+  127  pwd
+  128  mkdir
+  129  mkdir 210953021
+  130  cd 210953021
+  131  pwd
+  132  ls -l
+  133  ls-l
+  134  touch a.txt
+  135  nano a.txt
+  136  ls -l
+  137  ls
+  138  ls -l >a
+  139  ls -l >a write
+  140  wc a.txt
+  141  cat a.txt
+  142  nano a.txt
+  143  cat a.txt wc
+  144  ls -l
+  145  is -a
+  146  ls -a
+  147  touch b.txt c.txt
+  148  ls -l
+  149  pwd
+  150  is 210953021
+  151  ls 210953021
+  152  ls -ld
+  153  ls -l
+  154  ls usr
+  155  ls /home/student/210953021/c*
+  156  touch cat.txt
+  157  ls /home/student/210953021/c*
+  158  ls -l --color
+  159  ls -l
+  160  ls -l --brown
+  161  ls --help
+  162  cat a
+  163  cat cat
+  164  ls
+  165  ls *a*
+  166  cat a.txt.save
+  167  cat a.txt
+  168  cat a.txt.save.1
+  169  rm /210953021/a.txt.save.1
+  170  mkdir my
+  171  cd
+  172  cd 210953021
+  173  cd my
+  174  cd
+  175  cd 210953021
+  176  mv a.txt /my
+  177  which my
+  178  which 210953021
+  179  locate my
+  180  locate 210953021
+  181  ls *.txt*
+  182  ls *0-9*.txt*
+  183  ls *1
+  184  ls *0-9!
+  185  cd 
+  186  cd <my>
+  187  cd my
+  188  cd 210953021
+  189  cd my
+  190  cd ..
+  191  cd my
+  192  cd ..
+  193  ls /student/210953021/0-9..
+  194  ls
+  195  whoami
+  196  which grem
+  197  rm a.txt
+  198  ls
+  199  rm a.txt.save
+  200  ls
+  201  touch a.txt
+  202  ls
+  203  tr source target <a >b
+  204  "[a-3A-Z]" "[A-Za-z]"
+  205  [a-3A-Z] [A-Za-z]
+  206  tr source target <a >b;
+  207  [a-3A-Z] [A-Za-z]
+  208  "[a-3A-Z]" "[A-Za-z]"
+  209  ls -l >a.txt
+  210  ls -l >> a.txt
+  211  cat -n a.txt
+  212  head a.txt
+  213  tail a.txt
+  214  head -10 a.txt! tail-5
+  215  head -10 a.txt! tail -5
+  216  head -10 a.txt ! tail -5
+  217  head -10 a.txttail a.txt -5
+  218  head -10 a.txt tail-5
+  219  cd 220953428
+  220  ls *.txt
+  221  ls *?[0-9].*
+  222  ls *?[0-9]*.*
+  223  touch etxt.txt
+  224  ls ????.*
+  225  ?[!a-zA-Z]*.*
+  226  [!a-zA-Z]?*.*
+  227  ls ?[!a-zA-Z]*.*
+  228  ls [!a-zA-Z]?*.*
+  229  ls ?[!aeiouAEIOU]*.*
+  230  ls ?[!aeiouAEIOU].*
+  231  ls [!aeiouAEIOU]*.*
+  232  touch fruitlist.txt
+  233  cat >> fruitlist.txt
+  234  cat fruitlist.txt
+  235  cat >> fruitlist.txt
+  236  cat fruitlist
+  237  cat fruitlist.txt
+  238  grep apple fruitlist.txt
+  239  grep -x apple fruitlist.txt
+  240  grep ^p fruitlist.txt
+  241  touch sports.txt
+  242  cat >> sports.txt
+  243  grep foot sports.txt
+  244  grep -x foot sports.txt
+  245  grep -x cricket sports.txt
+  246  grep ^k sports.txt
+  247  grep -v volleyball hockey sorts.txt
+  248  grep  -v volleyball sports.txt
+  249  grep  -v volleyball hockey sports.txt
+  250  sort sports.txt
+  251  sort -o sports.txt sortedsports.txt
+  252  touch sortedsports.txt
+  253  sort -o sports.txt sortedsports.txt
+  254  cat sortedsports.txt
+  255  cat sports.txt
+  256  cat >> sports.txt
+  257  cat sports.txt
+  258  sort -o sports.txt sortedsports.txt
+  259  cat sports.txt
+  260  cat >> sports.txt
+  261  sort -o sortedsports.txt sports.txt
+  262  cat sortedsports.txt
+  263  sort -r sports.txt
+  264  sort -n sports.txt
+  265  cat sports.txt
+  266  cat >> sports.txt
+  267  cat sports.txt
+  268  cat >> sports.txt
+  269  sort -n sports.txt
+  270  wc sports.txt
+  271  wc -l sports.txt
+  272  wc -c sports.txt
+  273  touch record.txt
+  274  cat record
+  275  cat record.txt
+  276  cut -c 1-3 record.txt
+  277  cut -c 1,4,7 record.txt
+  278  rm record.txt
+  279  cat fruitlist.txt
+  280  mv fruitlist.txt fruit.txt
+  281  ls -l
+  282  cat fruit.txt
+  283  cut -c 1-3 fruit.txt
+  284  cut -c 1,4,7 fruit.txt
+  285  cut -c 1-3,6 fruit.txt
+  286  cut -c 3- fruit.txxt
+  287  cut -c 3- fruit.txt
+  288  cut -f 1,4,7 fruit.txt
+  289  ls -l
+  290  chmod a+x file1.txt
+  291  ls -l
+  292  ls -l > record.txt
+  293  cat record.txt
+  294  cut -f 1-3 record.txt
+  295  cut -d " "
+  296  cut -d " " -f 2
+  297  cat record.txt
+  298  cd ..
+  299  rmdir trial
+  300  mkdir trial
+  301  rmdir -r trial
+  302  rmdir -f trial
+  303  rmdir trial
+  304  cd 220953428
+  305  tr "[a-z]" "[A-Z]" < filename
+  306  tr "[a-z]" "[A-Z]" < sports.txt
+  307  tr 'abcd' 'jkmn' <sports.txt
+  308  tr -s "\n" <sports.txt
+  309  nano file.txt
+  310  tr -d "\n" < sports.txt
+  311  ps
+  312  cd 220953428
+  313  ps
+  314  ls -l
+  315  chmod +r file1.txt
+  316  ls -l
+  317  chmod a-x file1.txt
+  318  ls -l
+  319  chmod a+rx file1.txt
+  320  ls -l
+  321  chmod u=rw,g=r,o= file1.txt
+  322  ls -l
+  323  chmod 664 file1.txt
+  324  ls-l
+  325  ls -l
+  326  echo this is Os Lab
+  327  history
+  328  history >> hist.txt
+  329  cat hist.txt
+  330  cd home
+  331  ./waf --run scratch/lab2
+  332  ./waf
+  333  ls
+  334  ls
+  335  clear
+  336  ls
+  337  mv lab2 lab2.cc
+  338  ./waf --run scratch/correct.cc
+  339  ./waf --run scratch/correct
+  340  ./waf --run scratch/lab2
+  341  ./waf --run scratch/correct
+  342  cd ..
+  343  cd netanim-3.108/
+  344  ./NetAnim
+  345  cd 220953428
+  346  ls -l
+  347  cat t1
+  348  cat t1.doc
+  349  touch 22/1/24.txt
+  350  touch 22-1-24.txt
+  351  rm 22-1-24.txt
+  352  touch lab3.txt
+  353  mkdir lab
+  354  rmdir lab
+  355  mkdir lab3
+  356  touch test.sh
+  357  nano test.sh
+  358  cat test.sh
+  359  bash test.sh
+  360  nano test.sh
+  361  bash test.sh
+  362  nano test.sh
+  363  bash test.sh
+  364  chmod +x test.sh
+  365  ./test.sh
+  366  bash test.sh
+  367  cd lab3
+  368  touch lab3_q1.sh
+  369  nano test.sh
+  370  bash test.sh
+  371  nano lab3_q1.sh
+  372  rm lab3_q1.sh
+  373  cat lab3_q1.sh
+  374  touch l3q4.sh
+  375  touch l3q2.sh
+  376  nano l3q2.sh
+  377  bash l3q2.sh
+  378  nano l3q2.sh
+  379  nano test.sh
+  380  nano l3q2.sh
+  381  bash l3q2.sh
+  382  nano l3q2.sh
+  383  bash l3q2.sh
+  384  nano l3q2.sh
+  385  bash l3q2.sh
+  386  nano l3q2.sh
+  387  bas l3q2.sh
+  388  bash l3q2.sh
+  389  ls -l
+  390  touch l3q1.sh
+  391  nano l3q1.sh
+  392  nano l3q2.sh
+  393  nano l3q1.sh
+  394  bash l3q1.sh
+  395  nano l3q1.sh
+  396  bash l3q1.sh
+  397  nano l3q1.sh
+  398  bash l3q1.sh
+  399  nano l3q1.sh
+  400  bash l3q1.sh
+  401  nano l3q1.sh
+  402  bash l3q1.sh
+  403  nano l3q1.sh
+  404  ls -l
+  405  nano l3q4.sh
+  406  nano l3q1.sh
+  407  nano l3q4.sh
+  408  bash l3q4.sh
+  409  nano l3q4.sh
+  410  bash l3q4.sh
+  411  nano l3q4.sh
+  412  bash l3q4.sh
+  413  nano l3q4.sh
+  414  nano test.sh
+  415  ./test.sh
+  416  nano test.sh
+  417  bash l3q1.sh
+  418  rm lab3.txt
+  419  cd ..
+  420  rm lab3.txt
+  421  cd lab3
+  422  bash l3q1.sh
+  423  cd ..
+  424  touch lab3.txt
+  425  cd lab3
+  426  nano test.sh
+  427  nano l3q1.sh
+  428  nano test.sh
+  429  bash test.sh
+  430  nano l3q1.sh
+  431  nano test.sh
+  432  bash test.sh
+  433  nano test.sh
+  434  bash test.sh
+  435  nano test.sh
+  436  ./test.sh
+  437  nano test.sh
+  438  ./test.sh
+  439  nano l3q2.sh
+  440  bash l3q2.sh
+  441  nano l3q2.sh
+  442  nano test.sh
+  443  nano l3q2.sh
+  444  bash l3q2.sh
+  445  nano l3q2.sh
+  446  bash l3q2.sh
+  447  nano l3q2.sh
+  448  history>lab3
