@@ -2,6 +2,21 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+void display(int psize[],int n,int alloc[])
+{
+printf("\nProcess No.\tProcess Size\tBlock no.\n"); 
+    for (int i = 0; i < n; i++) 
+    { 
+        printf(" %i\t\t\t", i+1); 
+        printf("%i\t\t\t", psize[i]); 
+        if (alloc[i] != -1) 
+            printf("%i", alloc[i] + 1); 
+        else
+            printf("Not Allocated"); 
+        printf("\n"); 
+    } 
+}
+
 
 void firstfit(int psize[],int n,int bsize[],int m)
 {
@@ -22,18 +37,7 @@ for(i=0;i<n;i++)
            }
       }
 }
-
-printf("\nProcess No.\tProcess Size\tBlock no.\n"); 
-    for (int i = 0; i < n; i++) 
-    { 
-        printf(" %i\t\t\t", i+1); 
-        printf("%i\t\t\t", psize[i]); 
-        if (allocation[i] != -1) 
-            printf("%i", allocation[i] + 1); 
-        else
-            printf("Not Allocated"); 
-        printf("\n"); 
-    } 
+display(psize,n,allocation);
 
 }
 
@@ -63,18 +67,7 @@ for (i = 0; i < n; i++)
             bsize[bestIdx] -= psize[i];  
         }  
     }  
-
-printf("\nProcess No.\tProcess Size\tBlock no.\n"); 
-    for (int i = 0; i < n; i++) 
-    { 
-        printf(" %i\t\t\t", i+1); 
-        printf("%i\t\t\t\t", psize[i]); 
-        if (allocation[i] != -1) 
-            printf("%i", allocation[i] + 1); 
-        else
-            printf("Not Allocated"); 
-        printf("\n"); 
-    } 
+display(psize,n,allocation);
 
 }
 
@@ -103,18 +96,7 @@ for (i=0; i<n; i++)
             bsize[wstIdx] -= psize[i]; 
         } 
     } 
-printf("\nProcess No.\tProcess Size\tBlock no.\n"); 
-    for (int i = 0; i < n; i++) 
-    { 
-        printf(" %i\t\t\t", i+1); 
-        printf("%i\t\t\t", psize[i]); 
-        if (allocation[i] != -1) 
-            printf("%i", allocation[i] + 1); 
-        else
-            printf("Not Allocated"); 
-        printf("\n"); 
-    } 
-
+display(psize,n,allocation);
 }
 
 int main()
