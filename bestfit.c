@@ -1,26 +1,34 @@
 //works
+
 #include <stdio.h>
 #include<stdlib.h>
 
-void firstfit(int psize[],int n,int bsize[],int m)
+void bestfit(int psize[],int n,int bsize[],int m)
 {
-int i,j;
+int i,j,k;
 int allocation[n];
 for(i=0;i<n;i++)
 allocation[i]=-1;
-
-for(i=0;i<n;i++)
-{
-   for(j=0;j<m;j++)
-      {
-        if(bsize[j]>=psize[i])
-           {
-             allocation[i]=j;
-             bsize[j]=bsize[j]-psize[i];
-             break;
-           }
-      }
-}
+for (i = 0; i < n; i++)  
+    {    
+        int bestIdx = -1;  
+        for (j = 0; j < m; j++)  
+        {  
+            if (bsize[j] >= psize[i])  
+            {  
+                if (bestIdx == -1)  
+                    bestIdx = j;  
+                else if (bsize[bestIdx] > bsize[j])  
+                    bestIdx = j;  
+            }  
+        }  
+   
+        if (bestIdx != -1)  
+        {  
+            allocation[i] = bestIdx;    
+            bsize[bestIdx] -= psize[i];  
+        }  
+    }  
 
 printf("\nProcess No.\tProcess Size\tBlock no.\n"); 
     for (int i = 0; i < n; i++) 
@@ -57,5 +65,5 @@ int main()
      printf("Block %d:",(i+1));
      scanf("%d",&b[i]);
     }
-  firstfit(p,n,b,m);
+  bestfit(p,n,b,m);
 }
