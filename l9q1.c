@@ -27,7 +27,7 @@ printf("\nProcess No.\tProcess Size\tBlock no.\n");
     for (int i = 0; i < n; i++) 
     { 
         printf(" %i\t\t\t", i+1); 
-        printf("%i\t\t\t\t", psize[i]); 
+        printf("%i\t\t\t", psize[i]); 
         if (allocation[i] != -1) 
             printf("%i", allocation[i] + 1); 
         else
@@ -78,6 +78,45 @@ printf("\nProcess No.\tProcess Size\tBlock no.\n");
 
 }
 
+void worstfit(int psize[],int n,int bsize[],int m)
+{
+int i,j,k;
+int allocation[n];
+for(i=0;i<n;i++)
+allocation[i]=-1;
+for (i=0; i<n; i++) 
+    { 
+        int wstIdx = -1; 
+        for (j=0; j<m; j++) 
+        { 
+            if (bsize[j] >= psize[i]) 
+            { 
+                if (wstIdx == -1) 
+                    wstIdx = j; 
+                else if (bsize[wstIdx] < bsize[j]) 
+                    wstIdx = j; 
+            } 
+        } 
+        if (wstIdx != -1) 
+        { 
+            allocation[i] = wstIdx;  
+            bsize[wstIdx] -= psize[i]; 
+        } 
+    } 
+printf("\nProcess No.\tProcess Size\tBlock no.\n"); 
+    for (int i = 0; i < n; i++) 
+    { 
+        printf(" %i\t\t\t", i+1); 
+        printf("%i\t\t\t", psize[i]); 
+        if (allocation[i] != -1) 
+            printf("%i", allocation[i] + 1); 
+        else
+            printf("Not Allocated"); 
+        printf("\n"); 
+    } 
+
+}
+
 int main()
 {
   int n,m,i,opt;
@@ -99,7 +138,7 @@ int main()
      printf("Block %d:",(i+1));
      scanf("%d",&b[i]);
     }
-  printf("Enter 1 for bestfit and 2 for first fit allocation\n");
+  printf("Enter 1 for bestfit and 2 for first fit and 3 for worst fit allocation\n");
   scanf("%d",&opt);
   switch(opt)
   {
@@ -109,6 +148,10 @@ int main()
           }
   case 2:{
           firstfit(p,n,b,m);
+          break;
+          }
+  case 3:{
+          worstfit(p,n,b,m);
           break;
           }
   default:printf("Wrong choice\n");
