@@ -1,56 +1,77 @@
-//does not work
 #include <stdio.h>
-#include <string.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <errno.h>
 #include <sys/wait.h>
+#include <string.h>
 
-
-int main()
+int main(int N, char *argv[])
 {
-int n;
-printf("Enter the value of n");
-scanf("%d",&n);
-printf("Enter %d strings",n);
-int i,j;
-char *str[n];
-for(i=0;i<n;i++)
-scanf("%s",str[i]);
-pid_t p1;
-int status;
-p1=fork();
-
-if(p1==0)
-{
-char *bubble[n];
-for(i=0;i<n;i++)
-strcmp(bubble[i],str[i]);
+int i,j,min,status;
 char *temp;
-for (i = 0; i < n- 1; i++) 
+//char mins[40];
+pid_t pid1=fork();
+
+if(pid1==0)
 {
-for (j = i + 1; j < n; j++) 
+printf("In child process\n");
+for(i=1;i<N;i++)
 {
-if (strcmp(bubble[i], bubble[j]) > 0) 
+for(j=1;j<N-i;j++)
 {
-char *temp=bubble[i];
-bubble[i]=bubble[j];
-bubble[j]=temp;
-//   strcmp(temp,bubble[i]);
-//   strcmp(bubble[i],bubble[j]);
-//  strcmp(bubble[j],temp);
+if(strcmp(argv[j],argv[j+1])>0)
+{
+strcpy(temp,argv[j]);
+strcpy(argv[j],argv[j+1]);
+strcpy(argv[j+1],temp);
 }
 }
 }
-printf("\nUsing bubble sort:\n");
-for(i=0;i<n;i++)
-printf("%s\t",bubble[i]);
+
+printf("The bubble sorted strings are: ");
+for(i=1;i<N;i++)
+{
+printf("%s\t",argv[i]);
+}
 printf("\n");
+
 }
-else if(p1>0)
+
+else if(pid1>0)
+{
 wait(&status);
+pid_t pid2=fork();
+
+if(pid2==0)
+{
+for(i=1;i<N-1;i++)
+{
+min=i;
+//strcpy(mins,arv[i]);
+for(j=i+1;j<N;j++)
+{
+if(strcmp(argv[j],argv[min])<0)
+{
+min=j;
+}
+temp=argv[min];
+argv[min]=argv[i];
+argv[i]=temp;
+}
+}
+printf("The selection sorted strings are: ");
+for(i=1;i<N;i++)
+{
+printf("%s\t",argv[i]);
+}
+printf("\n");
+
+
+}
 else
-printf("\nForking failed\n");
+{
+wait(&status);
+printf("In parent process\n");
+}
 
-
+}
 }
