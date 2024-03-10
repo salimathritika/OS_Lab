@@ -1,3 +1,4 @@
+//Dining philosopher's problem
 #include <stdio.h>
 #include <pthread.h>
 #include <unistd.h>
@@ -28,7 +29,7 @@ void *philosopher(void *arg) {
         second_fork = left_fork(id);
     }
 
-    while (1) {
+   
         // Try to pick up first fork
         pthread_mutex_lock(&forks[first_fork]);
         printf("Philosopher %d picked up fork %d\n", id, first_fork);
@@ -49,7 +50,7 @@ void *philosopher(void *arg) {
 
         // Sleep for random time
         usleep(rand() % 1000000);
-    }
+    
 
     return NULL;
 }
