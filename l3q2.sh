@@ -7,3 +7,13 @@ cd $path
 echo "Enter the file name"
 read name
 ls *$name*
+
+#OR
+
+cd ~
+echo "Enter directory"
+read path
+cd $path
+echo "Enter pattern"
+read a
+grep -lr $a| xargs echo $xargs
