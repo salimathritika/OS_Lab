@@ -140,6 +140,10 @@ int main() {
     for (int i = 0; i < R; i++) {
         scanf("%d", &request[i]);
     }
+    resourceRequest(P, R, available, max, allocation, request, pid);
+
+    return 0;
+}
 
 /*
 Enter number of processes: 5
@@ -233,9 +237,3 @@ Enter resource request for process 4:
 Process 4 must wait due to insufficient resources.
 
 */
-
-    resourceRequest(P, R, available, max, allocation, request, pid);
-
-    return 0;
-}
-
