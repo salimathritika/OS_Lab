@@ -7,10 +7,10 @@ void display(int psize[],int n,int alloc[])
 printf("\nProcess No.\tProcess Size\tBlock no.\n"); 
     for (int i = 0; i < n; i++) 
     { 
-        printf(" %i\t\t\t", i+1); 
-        printf("%i\t\t\t", psize[i]); 
+        printf(" %d\t\t\t", i+1); 
+        printf("%d\t\t\t", psize[i]); 
         if (alloc[i] != -1) 
-            printf("%i", alloc[i] + 1); 
+            printf("%d", alloc[i] + 1); 
         else
             printf("Not Allocated"); 
         printf("\n"); 
