@@ -139,3 +139,47 @@ int main()
   default:printf("Wrong choice\n");
   }
 }
+
+/*Enter the number of processes:4
+
+Enter the process sizes:
+
+Process 1:212
+
+Process 2:417
+
+Process 3:112
+
+Process 4:426
+
+Enter the number of blocks:5
+
+Enter the block sizes:
+
+Block 1:100
+
+Block 2:500
+
+Block 3:200
+
+Block 4:300
+
+Block 5:600
+
+Enter 1 for bestfit and 2 for first fit and 3 for worst fit allocation
+
+1
+
+
+
+Process No.	Process Size	Block no.
+
+ 1			212			4
+
+ 2			417			2
+
+ 3			112			3
+
+ 4			426			5
+
+*/
