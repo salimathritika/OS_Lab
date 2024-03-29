@@ -1,71 +1,121 @@
-//not working
+#include<semaphore.h>
 
-#include <stdio.h>
-#include <pthread.h>
-#include <semaphore.h>
+#include<stdio.h>
 
-#define NUM_READERS 5
-#define NUM_WRITERS 2
+#include<stdlib.h>
 
-sem_t mutex, writeblock;
-int data = 0, readers_count = 0;
+#include<unistd.h>
 
-void *reader(void *arg) {
-    int reader_id = *(int*) arg;
-    while (1) {
-        sem_wait(&mutex);
-        readers_count++;
-        if (readers_count == 1)
-            sem_wait(&writeblock);
-        sem_post(&mutex);
+#include<pthread.h>
 
-        printf("Reader %d read data: %d\n", reader_id, data);
+sem_t x,y;
 
-        sem_wait(&mutex);
-        readers_count--;
-        if (readers_count == 0)
-            sem_post(&writeblock);
-        sem_post(&mutex);
+pthread_t tid;
+
+pthread_t writerthreads[100],readerthreads[100];
+
+int readercount = 0;
+
+
+
+void *reader(void* param)
+
+{
+
+    sem_wait(&x);
+
+    readercount++;
+
+    if(readercount==1)
+
+        sem_wait(&y);
+
+    sem_post(&x);
+
+    printf("%d reader is inside\n",readercount);
+
+    usleep(3);
+
+    sem_wait(&x);
+
+    readercount--;
+
+    if(readercount==0)
+
+    {
+
+        sem_post(&y);
+
     }
+
+    sem_post(&x);
+
+    printf("%d Reader is leaving\n",readercount+1);
+
+    return NULL;
+
 }
 
-void *writer(void *arg) {
-    int writer_id = *(int*) arg;
-    while (1) {
-        sem_wait(&writeblock);
-        data++;
-        printf("Writer %d wrote data: %d\n", writer_id, data);
-        sem_post(&writeblock);
-    }
+
+
+void *writer(void* param)
+
+{
+
+    printf("Writer is trying to enter\n");
+
+    sem_wait(&y);
+
+    printf("Writer has entered\n");
+
+    sem_post(&y);
+
+    printf("Writer is leaving\n");
+
+    return NULL;
+
 }
 
-int main() {
-    pthread_t readers[NUM_READERS], writers[NUM_WRITERS];
-    int reader_ids[NUM_READERS], writer_ids[NUM_WRITERS];
 
-    sem_init(&mutex, 0, 1);
-    sem_init(&writeblock, 0, 1);
 
-    for (int i = 0; i < NUM_READERS; i++) {
-        reader_ids[i] = i + 1;
-        pthread_create(&readers[i], NULL, reader, &reader_ids[i]);
+int main()
+
+{
+
+    int n2,i;
+
+    printf("Enter the number of readers:");
+
+    scanf("%d",&n2);
+
+    printf("\n");
+
+    int n1[n2];
+
+    sem_init(&x,0,1);
+
+    sem_init(&y,0,1);
+
+    for(i=0;i<n2;i++)
+
+    {
+
+        pthread_create(&writerthreads[i],NULL,reader,NULL);
+
+        pthread_create(&readerthreads[i],NULL,writer,NULL);
+
     }
 
-    for (int i = 0; i < NUM_WRITERS; i++) {
-        writer_ids[i] = i + 1;
-        pthread_create(&writers[i], NULL, writer, &writer_ids[i]);
+    for(i=0;i<n2;i++)
+
+    {
+
+        pthread_join(writerthreads[i],NULL);
+
+        pthread_join(readerthreads[i],NULL);
+
     }
 
-    for (int i = 0; i < NUM_READERS; i++) {
-        pthread_join(readers[i], NULL);
-    }
 
-    for (int i = 0; i < NUM_WRITERS; i++) {
-        pthread_join(writers[i], NULL);
-    }
 
-    sem_destroy(&mutex);
-    sem_destroy(&writeblock);
-
-    return 0;
 }
