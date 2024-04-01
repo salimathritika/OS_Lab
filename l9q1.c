@@ -2,9 +2,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void display(int psize[],int n,int alloc[])
+void display(int psize[],int n,int alloc[],int bsize[])
 {
-printf("\nProcess No.\tProcess Size\tBlock no.\n"); 
+printf("\nProcess No.\tProcess Size\tBlock no.\tInternal fragmentation\n"); 
     for (int i = 0; i < n; i++) 
     { 
         printf(" %d\t\t\t", i+1); 
@@ -13,6 +13,8 @@ printf("\nProcess No.\tProcess Size\tBlock no.\n");
             printf("%d", alloc[i] + 1); 
         else
             printf("Not Allocated"); 
+        printf("\t\t");
+        printf("%d", bsize[alloc[i]]); 
         printf("\n"); 
     } 
 }
@@ -37,7 +39,7 @@ for(i=0;i<n;i++)
            }
       }
 }
-display(psize,n,allocation);
+display(psize,n,allocation,bsize);
 
 }
 
@@ -67,7 +69,7 @@ for (i = 0; i < n; i++)
             bsize[bestIdx] -= psize[i];  
         }  
     }  
-display(psize,n,allocation);
+display(psize,n,allocation,bsize);
 
 }
 
@@ -96,7 +98,7 @@ for (i=0; i<n; i++)
             bsize[wstIdx] -= psize[i]; 
         } 
     } 
-display(psize,n,allocation);
+display(psize,n,allocation,bsize);
 }
 
 int main()
@@ -139,47 +141,3 @@ int main()
   default:printf("Wrong choice\n");
   }
 }
-
-/*Enter the number of processes:4
-
-Enter the process sizes:
-
-Process 1:212
-
-Process 2:417
-
-Process 3:112
-
-Process 4:426
-
-Enter the number of blocks:5
-
-Enter the block sizes:
-
-Block 1:100
-
-Block 2:500
-
-Block 3:200
-
-Block 4:300
-
-Block 5:600
-
-Enter 1 for bestfit and 2 for first fit and 3 for worst fit allocation
-
-1
-
-
-
-Process No.	Process Size	Block no.
-
- 1			212			4
-
- 2			417			2
-
- 3			112			3
-
- 4			426			5
-
-*/
