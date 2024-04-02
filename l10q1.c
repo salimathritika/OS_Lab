@@ -119,3 +119,108 @@ int main()
           break;
    }
 }
+
+
+/*
+Enter the number of frames:3
+
+Enter the number of pages:19
+
+Enter the string of pages:
+
+3
+
+2
+
+1
+
+3
+
+4
+
+1
+
+6
+
+2
+
+4
+
+3
+
+4
+
+2
+
+1
+
+4
+
+5
+
+2
+
+1
+
+3
+
+4
+
+
+
+Choose one of the algorithms:
+
+1.FIFO
+
+2.Optimal
+
+2
+
+Page		Frames
+
+
+
+3		3	-1	-1	
+
+2		3	2	-1	
+
+1		3	2	1	
+
+3		3	2	1	
+
+4		4	2	1	
+
+1		4	2	1	
+
+6		4	2	6	
+
+2		4	2	6	
+
+4		4	2	6	
+
+3		4	2	3	
+
+4		4	2	3	
+
+2		4	2	3	
+
+1		4	2	1	
+
+4		4	2	1	
+
+5		5	2	1	
+
+2		5	2	1	
+
+1		5	2	1	
+
+3		3	2	1	
+
+4		4	2	1	
+
+
+
+Total Page Faults = 10
+
+Hits ratio = 9/19
+*/
