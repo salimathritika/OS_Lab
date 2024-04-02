@@ -1,8 +1,72 @@
-//WORKS FOR FIFO
+//WORKS FOR FIFO AND OPTIMAL
 #include <stdio.h>
 #include <stdlib.h>
 
-int nframe,npage,front=0,rear=0;
+int nframe,npage;
+
+void optimal(int *pstr,int *fq,int nframe,int npage)
+{
+int flag1, flag2, flag3, i, j, k, position, max, faults = 0;
+int temp[nframe];
+printf("Page\t\tFrames\n");
+for(i = 0; i < npage; i++){     
+      flag1 = flag2 = 0;
+        for(j = 0; j < nframe; j++){
+            if(fq[j] == pstr[i]){
+                   flag1 = flag2 = 1;
+                   break;
+               }
+        }
+        if(flag1 == 0){
+            for(j = 0; j < nframe; j++){
+                if(fq[j] == -1){
+                    faults++;
+                    fq[j] = pstr[i];
+                    flag2 = 1;
+                    break;
+                }
+            }    
+        }
+        if(flag2 == 0){
+            flag3 =0;
+            for(j = 0; j < nframe; j++){
+                temp[j] = -1;
+                for(k = i + 1; k < npage; k++){
+                    if(fq[j] == pstr[k]){
+                        temp[j] = k;
+                        break;
+                    }
+                }
+            }
+            for(j = 0; j < nframe; j++){
+                if(temp[j] == -1){
+                    position = j;
+                    flag3 = 1;
+                    break;
+                }
+            }
+            if(flag3 ==0){
+                max = temp[0];
+                position = 0;
+                for(j = 1; j < nframe; j++){
+                    if(temp[j] > max){
+                        max = temp[j];
+                        position = j;
+                    }
+                }               
+            }
+            fq[position] = pstr[i];
+            faults++;
+        }
+        printf("\n");
+        printf("%d\t\t",pstr[i]);
+        for(j = 0; j < nframe; j++){
+            printf("%d\t", fq[j]);
+        }
+    }
+    printf("\n\nTotal Page Faults = %d", faults);
+    printf("\nHits ratio = %d/%d\n", (npage-faults),npage);
+}
 
 void fifo(int *pstr,int *fq,int nframe,int npage)
 {
@@ -27,14 +91,13 @@ void fifo(int *pstr,int *fq,int nframe,int npage)
        }
      printf("\n");
    }
-   
    printf("Number of faults=%d",fault);
    printf("\nHit ratio=%d/%d\n",(npage-fault),npage);
 }
 
 int main()
 {
-   int i,j;
+   int i,j,opt;
    printf("Enter the number of frames:");
    scanf("%d",&nframe);
    printf("Enter the number of pages:");
@@ -46,6 +109,13 @@ int main()
       scanf("%d",&pstr[i]);
    for(i=0;i<nframe;i++)
       fq[i]=-1;
-   fifo(pstr,fq,nframe,npage);
-   
+   printf("\nChoose one of the algorithms:\n1.FIFO\n2.Optimal\n");
+   scanf("%d",&opt);
+   switch(opt)
+   {
+   case 1:fifo(pstr,fq,nframe,npage);
+          break;
+   case 2:optimal(pstr,fq,nframe,npage);
+          break;
+   }
 }
