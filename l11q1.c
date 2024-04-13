@@ -257,11 +257,12 @@ int main()
    {
      printf("Enter the number of requests:");
       scanf("%d",&n);
-      printf("Enter the head:");
-      scanf("%d",&init);
+      printf("Enter the requests\n");
       int *req=malloc(sizeof(int)*n);
       for(i=0;i<n;i++)
          scanf("%d",&req[i]);
+      printf("Enter the head:");
+      scanf("%d",&init);    
       fcfs(init,req,n);
    }
    else
@@ -310,3 +311,30 @@ int main()
 }
 }
 }
+
+/*
+Choose one of the following algorithms:
+1.FCFS
+2.SSTF
+3.SCAN
+4.LOOK
+5.C-SCAN
+6.C-LOOK
+1
+Enter the number of requests:8
+Enter the requests
+176
+79
+34
+60
+92
+11
+41
+114
+Enter the head:50
+Using FCFS:
+50->176->79->34->60->92->11->41->114
+
+Seek Time:510
+
+*/
