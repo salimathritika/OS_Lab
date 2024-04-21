@@ -1,0 +1,140 @@
+//SSTF SCAN WORKS
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+typedef struct{
+int reqn;
+bool v;
+}request;
+
+void sstf(int head, request req[],int n)
+{
+    int seek=0;
+    int i,j,min=100000,min_track,pos;
+    printf("%d->",head);
+    i=n;
+    while(i>0)
+    {
+        min=100000;
+        for(j=0;j<n;j++)
+        {
+            if(abs(head-req[j].reqn)<min && req[j].v==false)
+            {
+                min=abs(head-req[j].reqn);
+                min_track=req[j].reqn;
+                pos=j;
+            }
+        }
+        head=req[pos].reqn;
+        req[pos].v=true;
+        printf("%d->",min_track);
+        seek+=min;
+        i--;
+    }
+    printf("End\n");
+    printf("Seek time=%d",seek);
+}
+
+void scan(int head,request req[],int n,int dir)
+{
+    printf("Enter size of cylinder:");
+    int limit;
+    scanf("%d",&limit);
+    int seek=0;
+    int i,j;
+    printf("%d->",head);
+    switch(dir)
+    {
+    case 1:
+        {
+            for(i=head;i>=0;i--)
+            {
+                for(j=0;j<n;j++)
+                {
+                    if(req[j].reqn==i && req[j].v==false)
+                    {
+                        printf("%d->",req[j].reqn);
+                        seek+=abs(head-req[j].reqn);
+                        head=req[j].reqn;
+                        req[j].v=true;
+                    }
+                }
+            }
+            printf("0->");
+            seek+=2*(abs(head-0));
+            for(i=0;i<limit;i++)
+            {
+                for(j=0;j<n;j++)
+                {
+                    if(req[j].reqn==i && req[j].v==false)
+                    {
+                        printf("%d->",req[j].reqn);
+                        seek+=abs(head-req[j].reqn);
+                        head=req[j].reqn;
+                        req[j].v=true;
+                    }
+                }
+            }
+            break;
+        }
+    case 0:
+        {
+            for(i=head;i<limit;i++)
+            {
+                for(j=0;j<n;j++)
+                {
+                    if(req[j].reqn==i && req[j].v==false)
+                    {
+                        printf("%d->",req[j].reqn);
+                        seek+=abs(head-req[j].reqn);
+                        head=req[j].reqn;
+                        req[j].v=true;
+                    }
+                }
+            }
+            printf("%d->",(limit-1));
+            seek+=2*(abs(head-limit-1));
+            for(i=limit-1;i>=0;i--)
+            {
+                for(j=0;j<n;j++)
+                {
+                    if(req[j].reqn==i && req[j].v==false)
+                    {
+                        printf("%d->",req[j].reqn);
+                        seek+=abs(head-req[j].reqn);
+                        head=req[j].reqn;
+                        req[j].v=true;
+                    }
+                }
+            }
+            break;
+        }
+    }
+    printf("End\n");
+    printf("Seek time=%d",seek);
+}
+
+
+int main()
+{
+    int n,head;
+    int dir;
+    printf("Enter number of requests:");
+    scanf("%d",&n);
+    request *req=malloc(sizeof(request)*n);
+    printf("Enter the track numbers:\n");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&req[i].reqn);
+        req[i].v=false;
+    }
+    printf("Enter initial position of head:");
+    scanf("%d",&head);
+    printf("Enter 1 for left and 0 for right direction:");
+    scanf("%d",&dir);
+    //printf("Shortest seek time first:\n");
+    //sstf(head,req,n);
+    printf("SCAN:\n");
+    scan(head,req,n,dir);
+}
